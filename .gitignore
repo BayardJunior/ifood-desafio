@@ -180,3 +180,7 @@ target
 README.html
 
 .exercism
+
+mvnw
+mvnw.cmd
+.mvn/*
