@@ -18,6 +18,12 @@ public class ResponseEntityUtils {
                 .build();
     }
 
+    public static <T> ResponseEntity<T> badRequest(T body) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(body);
+    }
+
     public static <T> ResponseEntity<T> created(T body) {
         return ResponseEntity.status(HttpStatus.CREATED).body(body);
     }

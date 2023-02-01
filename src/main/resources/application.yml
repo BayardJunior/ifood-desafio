@@ -14,29 +14,28 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/file?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/ifood?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: root
     type: com.zaxxer.hikari.HikariDataSource
-  flyway:
-    baselineOnMigrate: true
+  jpa:
+   show-sql: true
+   hibernate:
+    ddl-auto: create-drop
+   properties:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
   servlet:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: admin
-    password: admin
-
 # =================================
 # = Logging
 # =================================
 logging:
   level:
     org.springframework: ERROR
-    org.flywaydb: ERROR
 
 # =================================
 # = App
